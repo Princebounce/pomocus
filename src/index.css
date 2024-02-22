@@ -1,0 +1,47 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "LaBelleAurore";
+  src: url("assets/fonts/LaBelleAurore.woff");
+}
+
+@font-face {
+  font-family: "CoolveticaRg";
+  src: url("assets/fonts/CoolveticaRg-Regular.woff2");
+}
+
+@font-face {
+  font-family: "LaBelleAurore";
+  src: url("assets/fonts/LaBelleAurore.woff2");
+}
+
+@font-face {
+  font-family: "Helvetica Neue";
+  src: url("assets/fonts/helvetica-neu.ttf");
+}
+
+body {
+  @apply bg-gray-900 text-gray-100 font-sans box-border antialiased;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.btn-primary {
+  @apply bg-customPink font-semibold text-white md:mx-0 mx-auto rounded-full py-3 px-6 flex items-center gap-2;
+}
+
+input,
+textarea {
+  @apply bg-gray-700 outline-none rounded-lg p-3;
+}
+::placeholder {
+  @apply text-lg;
+}

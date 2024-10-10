@@ -17,7 +17,6 @@ const Time = () => {
   const [bgColor, setBgColor] = useState("bg-customPink");
   const [menuOpen, setMenuOpen] = useState(false); // State to track if the menu is open
 
-
   useEffect(() => {
     let timer;
 
@@ -89,22 +88,19 @@ const Time = () => {
   const toggleMenu = () => {
     setMenuOpen((prev) => !prev); // Toggle menu visibility
   };
- 
-
-  
-  
 
   return (
     <div className={`h-screen p-4 flex justify-center items-center ${bgColor}`}>
       <div className="w-full max-w-md p-6 mx-auto border-solid text-center lg:max-w-xl md:max-w-lg">
-
         <div
           className="p-6 bg-white/10 rounded-lg shadow-xl border backdrop-blur-lg"
           style={{ backdropFilter: "blur(10px)" }}
         >
           <div className="flex justify-center mb-4">
             <button
-              onClick={() => handleTabClick("pomodoro", 25 * 60, "bg-customPink")}
+              onClick={() =>
+                handleTabClick("pomodoro", 25 * 60, "bg-customPink")
+              }
               className={`rounded p-3 mx-2 ${
                 activeTab === "pomodoro"
                   ? "bg-customPink text-white shadow-lg focus:outline-none transition-transform transform hover:scale-105"
@@ -114,7 +110,9 @@ const Time = () => {
               Pomodoro
             </button>
             <button
-              onClick={() => handleTabClick("shortBreak", 5 * 60, "bg-customZeeb")}
+              onClick={() =>
+                handleTabClick("shortBreak", 5 * 60, "bg-customZeeb")
+              }
               className={`rounded p-3 mx-2 ${
                 activeTab === "shortBreak"
                   ? "bg-customZeeb text-white shadow-lg focus:outline-none transition-transform transform hover:scale-105"
@@ -124,7 +122,9 @@ const Time = () => {
               Short Break
             </button>
             <button
-              onClick={() => handleTabClick("longBreak", 15 * 60, "bg-customGray")}
+              onClick={() =>
+                handleTabClick("longBreak", 15 * 60, "bg-customGray")
+              }
               className={`rounded p-3 mx-2 ${
                 activeTab === "longBreak"
                   ? "bg-customGray text-white shadow-lg focus:outline-none transition-transform transform hover:scale-105"
@@ -159,47 +159,47 @@ const Time = () => {
           </div>
         </div>
 
- <div className="border-solid p-4">
-      <div>
-        <h1>#{sessionCount} Sessions Done</h1>
-        <p>Get Going</p>
-      </div>
-
-      <div className="flex justify-between items-center mt-4">
-        <div className="flex items-center">
-          <h2 className="text-lg">Tasks</h2>
-        </div>
-        <div className="relative">
-          {/* Menu icon */}
-          <div onClick={toggleMenu} className="cursor-pointer">
-            <TfiMenuAlt />
+        <div className="border-solid p-4">
+          <div>
+            <h1>#{sessionCount} Sessions Done</h1>
+            <p>Get Going</p>
           </div>
 
-          {/* Dropdown menu */}
-          {menuOpen && (
-             <div className="absolute right-0 mt-2 w-48 bg-white text-teal-500 rounded-lg shadow-lg py-2 z-10">
-              <ul className="text-left">
-                <li className="flex items-center px-4 py-2 hover:bg-gray-300 cursor-pointer">
-                <MdDelete  className="mr-2" />
-                  Clear Unfinished Tasks
-                </li>
-                <li className="flex items-center px-4 py-2 hover:bg-gray-300 cursor-pointer">
-                <MdDeleteSweep  className="mr-2" />
-                  Clear All Tasks
-                </li>
-                <li className="flex items-center px-4 py-2 hover:bg-gray-300 cursor-pointer">
-                  <TfiImport className="mr-2" />
-                  Import from Todoist
-                </li>
-                <li className="flex items-center px-4 py-2 hover:bg-gray-300 cursor-pointer">
-                <IoIosEyeOff className="mr-2" />
-                  Hide Tasks
-                </li>
-              </ul>
+          <div className="flex justify-between items-center mt-4">
+            <div className="flex items-center">
+              <h2 className="text-lg">Tasks</h2>
             </div>
-          )}
-        </div>
-      </div>
+            <div className="relative">
+              {/* Menu icon */}
+              <div onClick={toggleMenu} className="cursor-pointer">
+                <TfiMenuAlt />
+              </div>
+
+              {/* Dropdown menu */}
+              {menuOpen && (
+                <div className="absolute right-0 mt-2 w-48 bg-white text-teal-500 rounded-lg shadow-lg py-2 z-10">
+                  <ul className="text-left">
+                    <li className="flex items-center px-4 py-2 hover:bg-gray-300 cursor-pointer">
+                      <MdDelete className="mr-2" />
+                      Clear Unfinished Tasks
+                    </li>
+                    <li className="flex items-center px-4 py-2 hover:bg-gray-300 cursor-pointer">
+                      <MdDeleteSweep className="mr-2" />
+                      Clear All Tasks
+                    </li>
+                    <li className="flex items-center px-4 py-2 hover:bg-gray-300 cursor-pointer">
+                      <TfiImport className="mr-2" />
+                      Import from Todoist
+                    </li>
+                    <li className="flex items-center px-4 py-2 hover:bg-gray-300 cursor-pointer">
+                      <IoIosEyeOff className="mr-2" />
+                      Hide Tasks
+                    </li>
+                  </ul>
+                </div>
+              )}
+            </div>
+          </div>
 
           <Divider className="bg-white w-full" />
           <div className="flex items-center justify-center">

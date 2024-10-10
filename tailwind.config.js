@@ -16,7 +16,10 @@ module.exports = {
       },
       colors: {
         customPink: "#15858f", 
-        customTeal: "#30082c"
+        customTeal: "#30082c",
+        customGray: "#B3A9A0",
+        customZeeb: "#5A9D8A",
+        customBlue: "#000080"
       },
     },
   },

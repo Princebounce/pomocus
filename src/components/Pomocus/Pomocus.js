@@ -1,5 +1,5 @@
 import React from 'react'
-import Navbar from "../../application/Navbar"
+import Navbar from "../../application/Nav/Navbar"
 import Time from  "../../application/Time"
 
 const Pomocus = () => {

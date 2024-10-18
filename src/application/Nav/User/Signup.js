@@ -8,6 +8,7 @@ import {
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useNavigate } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import googlelogo from "../../../assets/images/web_light_sq_na.svg";
 
 // Initialize Google provider
@@ -18,10 +19,15 @@ const Signup = () => {
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const navigate = useNavigate();
-
+  
+  const handleLoginClick = () => {
+    navigate("/login"); // This will navigate to the signup page
+  };
   // Handle email/password signup
   const handleSubmit = (e) => {
     e.preventDefault();
+
+ 
 
     if (password !== confirmPassword) {
       showErrorToast("Passwords do not match!");
@@ -143,6 +149,14 @@ const Signup = () => {
             <img src={googlelogo} alt="Google logo" className="w-5 h-5 mr-2" />
             Sign Up with Google
           </button>
+          
+            <button
+              className="w-full mt-6 text-center text-customPink hover:underline focus:outline-none"
+              onClick={handleLoginClick}
+            >
+              Do you have an account? Login.
+            </button>
+          
         </div>
       </div>
       <ToastContainer />

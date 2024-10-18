@@ -15,7 +15,7 @@ const Logout = () => {
     signOut(auth)
       .then(() => {
         toast.success("Logged out successfully");
-        navigate("/login"); // Redirect to login page after successful logout
+        navigate("/"); // Redirect to login page after successful logout
       })
       .catch((error) => {
         toast.error("Failed to logout: " + error.message);
